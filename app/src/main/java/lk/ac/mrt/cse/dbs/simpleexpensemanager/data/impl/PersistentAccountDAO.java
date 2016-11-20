@@ -24,10 +24,9 @@ public class PersistentAccountDAO implements AccountDAO {
     @Override
     public List<String> getAccountNumbersList() {
         Cursor resultSet = database.rawQuery("SELECT Account_no FROM Account", null);
-        resultSet.moveToFirst();
         List<String> accounts = new ArrayList<>();
 
-        if (resultSet.moveToNext()) {
+        if (resultSet.moveToFirst()) {
             do {
                 accounts.add(resultSet.getString(resultSet.getColumnIndex("Account_no")));
             }while(resultSet.moveToNext());
@@ -39,15 +38,17 @@ public class PersistentAccountDAO implements AccountDAO {
     @Override
     public List<Account> getAccountsList() {
         Cursor resultSet = database.rawQuery("SELECT * FROM Account", null);
-        resultSet.moveToFirst();
+
         List<Account> accounts = new ArrayList<>();
 
-        while (resultSet.moveToNext()) {
-            Account account = new Account(resultSet.getString(resultSet.getColumnIndex("Account_no")),
-                    resultSet.getString(resultSet.getColumnIndex("Bank")),
-                    resultSet.getString(resultSet.getColumnIndex("Holder")),
-                    resultSet.getDouble(resultSet.getColumnIndex("Initial_amt")));
-            accounts.add(account);
+        if (resultSet.moveToFirst()) {
+            do {
+                Account account = new Account(resultSet.getString(resultSet.getColumnIndex("Account_no")),
+                        resultSet.getString(resultSet.getColumnIndex("Bank")),
+                        resultSet.getString(resultSet.getColumnIndex("Holder")),
+                        resultSet.getDouble(resultSet.getColumnIndex("Initial_amt")));
+                accounts.add(account);
+            }while(resultSet.moveToNext());
         }
 
         return accounts;
@@ -56,13 +57,15 @@ public class PersistentAccountDAO implements AccountDAO {
     @Override
     public Account getAccount(String accountNo) throws InvalidAccountException {
         Cursor resultSet = database.rawQuery("SELECT * FROM Account WHERE Account_no = " + accountNo, null);
-        resultSet.moveToFirst();
+
         Account account = null;
-        while (resultSet.moveToNext()) {
-            account = new Account(resultSet.getString(resultSet.getColumnIndex("Account_no")),
-                    resultSet.getString(resultSet.getColumnIndex("Bank")),
-                    resultSet.getString(resultSet.getColumnIndex("Holder")),
-                    resultSet.getDouble(resultSet.getColumnIndex("Initial_amt")));
+        if (resultSet.moveToFirst()) {
+            do {
+                account = new Account(resultSet.getString(resultSet.getColumnIndex("Account_no")),
+                        resultSet.getString(resultSet.getColumnIndex("Bank")),
+                        resultSet.getString(resultSet.getColumnIndex("Holder")),
+                        resultSet.getDouble(resultSet.getColumnIndex("Initial_amt")));
+            }while (resultSet.moveToNext());
         }
 
         return account;
