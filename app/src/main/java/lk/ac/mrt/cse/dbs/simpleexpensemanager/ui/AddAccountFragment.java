@@ -57,6 +57,7 @@ public class AddAccountFragment extends Fragment implements View.OnClickListener
         bankName = (EditText) rootView.findViewById(R.id.bank_name);
         accountHolderName = (EditText) rootView.findViewById(R.id.account_holder_name);
         initialBalance = (EditText) rootView.findViewById(R.id.initial_balance);
+
         addAccount = (Button) rootView.findViewById(R.id.add_account);
         addAccount.setOnClickListener(this);
 

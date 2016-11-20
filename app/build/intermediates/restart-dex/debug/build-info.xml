@@ -5,9 +5,9 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="498487567516633"
+    timestamp="500001263227519"
     token="2062097567626575036"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
@@ -22,10 +22,6 @@
         name="verifier"
         duration="0" />
 
-    <artifact
-        location="E:\SimpleExpenseManager\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
-
     <build
         timestamp="498487567516633"
         verifier="FULL_BUILD_REQUESTED" >
@@ -33,5 +29,15 @@
             location="E:\SimpleExpenseManager\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
+    <build
+        timestamp="499855981209487"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="E:\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="500001263227519"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>
