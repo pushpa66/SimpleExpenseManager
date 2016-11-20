@@ -21,6 +21,7 @@ public class PersistentAccountDAO implements AccountDAO {
         this.database = db;
     }
 
+    // use to get a list of account numbers from Account table
     @Override
     public List<String> getAccountNumbersList() {
         Cursor resultSet = database.rawQuery("SELECT Account_no FROM Account", null);
@@ -34,7 +35,7 @@ public class PersistentAccountDAO implements AccountDAO {
 
         return accounts;
     }
-
+    // use to get all account details from Account table
     @Override
     public List<Account> getAccountsList() {
         Cursor resultSet = database.rawQuery("SELECT * FROM Account", null);

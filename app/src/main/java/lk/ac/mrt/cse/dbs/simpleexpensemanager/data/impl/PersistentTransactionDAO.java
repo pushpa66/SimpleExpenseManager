@@ -20,6 +20,7 @@ public class PersistentTransactionDAO implements TransactionDAO {
         this.database = db;
     }
 
+    // this is use to maintain logging using Transaction database
     @Override
     public void logTransaction(Date date, String accountNo, ExpenseType expenseType, double amount) {
         String sql = "INSERT INTO TransactionLog (Account_no,Type,Amt,Log_date) VALUES (?,?,?,?)";
@@ -32,7 +33,7 @@ public class PersistentTransactionDAO implements TransactionDAO {
 
         statement.executeInsert();
     }
-
+    // this is use to get stored transaction data from the in-memory database
     @Override
     public List<Transaction> getAllTransactionLogs() {
         Cursor resultSet = database.rawQuery("SELECT * FROM TransactionLog", null);
@@ -48,7 +49,7 @@ public class PersistentTransactionDAO implements TransactionDAO {
         }
         return transactions;
     }
-
+    //
     @Override
     public List<Transaction> getPaginatedTransactionLogs(int limit) {
         Cursor resultSet = database.rawQuery("SELECT * FROM TransactionLog LIMIT " + limit, null);
