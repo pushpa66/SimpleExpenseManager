@@ -13,6 +13,7 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Transaction;
 
 public class PersistentTransactionDAO implements TransactionDAO {
+
     private SQLiteDatabase database;
 
     public PersistentTransactionDAO(SQLiteDatabase db) {
@@ -36,7 +37,7 @@ public class PersistentTransactionDAO implements TransactionDAO {
     public List<Transaction> getAllTransactionLogs() {
         Cursor resultSet = database.rawQuery("SELECT * FROM TransactionLog", null);
         resultSet.moveToFirst();
-        List<Transaction> transactions = new ArrayList<Transaction>();
+        List<Transaction> transactions = new ArrayList<>();
 
         while (resultSet.moveToNext()) {
             Transaction t = new Transaction(new Date(resultSet.getLong(resultSet.getColumnIndex("Log_date"))),
@@ -52,7 +53,7 @@ public class PersistentTransactionDAO implements TransactionDAO {
     public List<Transaction> getPaginatedTransactionLogs(int limit) {
         Cursor resultSet = database.rawQuery("SELECT * FROM TransactionLog LIMIT " + limit, null);
         resultSet.moveToFirst();
-        List<Transaction> transactions = new ArrayList<Transaction>();
+        List<Transaction> transactions = new ArrayList<>();
 
         while (resultSet.moveToNext()) {
             Transaction t = new Transaction(new Date(resultSet.getLong(resultSet.getColumnIndex("Log_date"))),

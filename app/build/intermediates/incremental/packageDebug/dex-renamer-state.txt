@@ -1,4 +1,4 @@
-#Sun Nov 20 13:55:17 IST 2016
+#Sun Nov 20 16:10:01 IST 2016
 base.0=E\:\\SimpleExpenseManager\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_fe6b5d2e636335da5f8507c86e7b34deee8f76a2
 renamed.1=classes.dex
 renamed.0=classes2.dex

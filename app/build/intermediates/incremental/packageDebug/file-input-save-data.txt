@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Nov 20 13:55:17 IST 2016
+#Sun Nov 20 16:10:01 IST 2016
 175.set=ANDROID_RESOURCE
 122.file=E\:\\SimpleExpenseManager\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_7\\classes.dex
 60.set=ANDROID_RESOURCE

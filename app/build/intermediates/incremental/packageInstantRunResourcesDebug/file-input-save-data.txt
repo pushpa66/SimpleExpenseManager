@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Nov 20 13:54:37 IST 2016
+#Sun Nov 20 16:09:25 IST 2016
 122.file=E\:\\SimpleExpenseManager\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\abc_screen_toolbar.xml
 60.set=ANDROID_RESOURCE
 129.file=E\:\\SimpleExpenseManager\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\abc_item_background_holo_dark.xml
