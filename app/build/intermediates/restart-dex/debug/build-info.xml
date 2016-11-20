@@ -5,22 +5,26 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="500001263227519"
+    timestamp="500592946377680"
     token="2062097567626575036"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="488" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="33" />
     <task
         name="verifier"
-        duration="0" />
+        duration="4" />
+
+    <artifact
+        location="E:\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+        type="DEX" />
 
     <build
         timestamp="498487567516633"
@@ -37,7 +41,11 @@
             type="DEX" />
     </build>
     <build
-        timestamp="500001263227519"
-        verifier="COLD_SWAP_REQUESTED" />
+        timestamp="500592946377680"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="E:\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+            type="DEX" />
+    </build>
 
 </instant-run>
